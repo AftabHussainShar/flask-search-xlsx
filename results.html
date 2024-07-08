@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    h1 {
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    label {
+        font-weight: bold;
+        text-align: left;
+    }
+    
+    input[type="text"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    button {
+        padding: 10px;
+        border: none;
+        background-color: #007BFF;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+    
+    /* Styles for the table */
+    table.data {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    
+    table.data th, table.data td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+    
+    table.data th {
+        background-color: #007BFF;
+        color: white;
+    }
+    
+    table.data tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    table.data tr:hover {
+        background-color: #ddd;
+    }
+    
+</style>
+  <body>
+    <div class="container">
+      <h1>Search Results</h1>
+      {% for table in tables %}
+        {{ table|safe }}
+      {% endfor %}
+    </div>
+  </body>
+</html>
